@@ -1,0 +1,37 @@
+﻿@model About
+
+@if(Model==null){
+    <a class="btn btn-primary" href="/admin/about/create">Create</a>
+}
+
+@if (Model != null)
+{
+ <table class="table caption-top table-primary table-striped table-hover">
+  <caption>List of users</caption>
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">SubTitle</th>
+          @*<th scope="col">link</th>*@
+        </tr>
+      </thead>
+  <tbody>
+    <tr>
+      <th scope="row">@Model.Id</th>
+      <td>@Model.Title</td>
+      <td>@Model.SubTitle</td>
+     
+      <td>
+          <a class="btn btn-danger btn-sm"    href="/admin/about/delete/@Model.Id">Delete</a>
+          <a class="btn btn-primary btn-sm"   href="/admin/about/edit/@Model.Id">Edit</a>
+          <a  class="btn btn-warning btn-sm mb-2"  href="/admin/about/detail/@Model.Id">detail</a>
+       </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+else{
+    <div class="alert alert-info">There is no information in database</div>
+}

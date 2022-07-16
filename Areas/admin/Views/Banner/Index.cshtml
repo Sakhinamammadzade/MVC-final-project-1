@@ -1,0 +1,41 @@
+﻿@model Banner
+
+@if (Model == null)
+{
+    <a class="btn btn-primary mb-2" href="/admin/banner/create">Create</a>
+}
+
+@if (Model != null)
+{
+ <table class="table caption-top table-primary table-striped table-hover">
+  <caption>List of users</caption>
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">SubTitle</th>
+          <th scope="col">Photo</th>
+        </tr>
+      </thead>
+  <tbody>
+    <tr>
+      <th scope="row">@Model.Id</th>
+      <td>@Model.Title</td>
+      <td>@Model.SubTitle</td>
+      <td>
+          <img class="img-fluid" width="150" src="~/@Model.PhotoUrl">
+
+      </td>
+      <td>
+          <a class="btn btn-danger btn-group-sm"    href="/admin/banner/delete/@Model.Id">Delete</a>
+          <a class="btn btn-primary btn-group-sm"   href="/admin/banner/edit/@Model.Id">Edit</a>
+          <a  class="btn btn-warning btn-group-sm"  href="/admin/banner/detail/@Model.Id">detail</a>
+       </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+else{
+    <div class="alert alert-info">There is no information in database</div>
+}

@@ -1,0 +1,42 @@
+﻿@model List<Services>
+<a class="btn btn-warning" href="/admin/Services/Create">Create</a>
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Icon</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <th scope="row">@item.Id</th>
+                <td>@item.Title</td>
+                <th>@item.Description</th>
+                <td>
+                    <i class="@item.Icon"></i>
+                </td>
+                <td>
+                    <a href="/admin/services/edit/@item.Id" class="btn btn-outline-warning btn-sm">Edit</a>
+                    <a href="/admin/services/delete/@item.Id" class="btn btn-outline-danger btn-sm">Delete</a>
+                    <a class="btn btn-outline-info btn-sm">Detail</a>
+
+                </td>
+
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
+
+
+
+

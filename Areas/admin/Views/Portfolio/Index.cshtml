@@ -1,0 +1,39 @@
+﻿@model List<Portfolio>
+<a class="btn btn-primary" href="/admin/Portfolio/Create">Create</a>
+
+<table class="table table-hover table-primary table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Photo</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <th scope="row">@item.Id</th>
+                <td>@item.Title</td>
+                <th>@item.Description</th>
+                <td>
+                    <img class="img-fluid" width="200" src="~/@item.PhotoUrl"/>
+                </td>
+                <td>
+                    <a href="/admin/portfolio/edit/@item.Id" class="btn btn-outline-warning btn-sm">Edit</a>
+                    <a href="/admin/portfolio/delete/@item.Id" class="btn btn-outline-danger btn-sm">Delete</a>
+                    <a href="/admin/portfolio/detail/@item.Id" class="btn btn-outline-info btn-sm">Detail</a>
+
+                </td>
+
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
+

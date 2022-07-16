@@ -1,0 +1,9 @@
+﻿@model Services
+
+<h1>هل تريد الاستمرار؟</h1>
+<form method="post">
+      <input type="hidden" name="Id" value="@Model.Id"/>
+      <input class="btn btn-outline-danger" type="submit" value="نعم"/>
+</form>
+
+<a href="/admin/services" class="btn btn-outline-warning">لا</a>
